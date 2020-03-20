@@ -1,5 +1,6 @@
 samples: samples.tsv
 units: units.tsv
+ncores: 6
 
 ref:
   name: GRCh38.87
@@ -28,6 +29,9 @@ processing:
   # If regions are restricted, uncomment this to enlarge them by the given value in order to include
   # flanking areas.
   # region-padding: 100
+  
+scna:
+  bin_size: 500000
 
 params:
   gatk:
@@ -52,3 +56,11 @@ params:
         - "TRAILING:3"
         - "SLIDINGWINDOW:4:15"
         - "MINLEN:36"
+
+## R setup
+##---------------------------------------------------------------------------------------------
+## Specify "True" if R should be installed in a conda environment or "False" if you want to use 
+## your own R installation (then you have to set the path to your library in the .Renviron file)
+useCondaR: False
+Rbin: "/usr/bin/R"
+##---------------------------------------------------------------------------------------------

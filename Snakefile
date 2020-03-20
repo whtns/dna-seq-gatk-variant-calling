@@ -7,7 +7,8 @@ rule all:
         "annotated/all.vcf.gz",
         "qc/multiqc.html",
         "plots/depths.svg",
-        "plots/allele-freqs.svg"
+        "plots/allele-freqs.svg",
+        "copywriter/CNAprofiles/segment.Rdata"
 
 
 ##### Modules #####
@@ -18,3 +19,4 @@ include: "rules/filtering.smk"
 include: "rules/stats.smk"
 include: "rules/qc.smk"
 include: "rules/annotation.smk"
+include: "rules/scna.smk"
